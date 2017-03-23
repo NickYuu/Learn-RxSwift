@@ -26,7 +26,6 @@ class WebViewController: UIViewController {
         
         webView.scalesPageToFit = true
         
-//        webView.delegate = self
     }
 
 }
