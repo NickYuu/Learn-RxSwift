@@ -68,10 +68,10 @@
 				689507E61CF32C9400708757 /* Assets.xcassets */,
 				68D8FDE21CF0130E008E18B2 /* AppDelegate.swift */,
 				68D8FDE41CF0130E008E18B2 /* ViewController.swift */,
+				689507EA1CF33B3500708757 /* AboutYouViewController.swift */,
 				68D8FDE61CF0130E008E18B2 /* Main.storyboard */,
 				68D8FDEB1CF0130E008E18B2 /* LaunchScreen.storyboard */,
 				68D8FDEE1CF0130E008E18B2 /* Info.plist */,
-				689507EA1CF33B3500708757 /* AboutYouViewController.swift */,
 				1B793B831E82156000B1E8AD /* Validator.swift */,
 			);
 			path = ReactiveLogin;

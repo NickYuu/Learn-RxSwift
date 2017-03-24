@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  ReactiveLogin
 //
-//  Created by Tsung Han Yu on 2017/3/22.
+//  Created by Tsung Han Yu on 2017/3/24.
 //  Copyright © 2017年 Boxue. All rights reserved.
 //
 
@@ -24,15 +24,16 @@ class ViewController: UIViewController {
         email.layer.borderWidth = 1
         password.layer.borderWidth = 1
         
-        email.rx.text.asObservable().map { (input) -> UIColor in
-                input!.isValidEmail() ? #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1) : #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
-            }.subscribe(onNext: {
+        
+        email.rx.text.asObservable()
+            .map { $0!.isValidEmail() ? #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1) : #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0) }
+            .subscribe(onNext: {
                 self.email.layer.borderColor = $0.cgColor
             }).addDisposableTo(bag)
         
-        password.rx.text.asObservable().map { (input) -> UIColor in
-                input!.isValidPassword() ? #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1) : #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0)
-            }.subscribe(onNext: {
+        password.rx.text.asObservable()
+            .map { $0!.isValidPassword() ? #colorLiteral(red: 0.4666666687, green: 0.7647058964, blue: 0.2666666806, alpha: 1) : #colorLiteral(red: 1, green: 1, blue: 1, alpha: 0) }
+            .subscribe(onNext: {
                 self.password.layer.borderColor = $0.cgColor
             }).addDisposableTo(bag)
         
