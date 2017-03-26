@@ -87,30 +87,30 @@ deferredSequence.subscribe { print($0) }
 */
 
 
-var masterNo        =  Variable("")     // 指定老師編號
-var masterGendar    =  Variable("")    // 老師性別
-var specifyGendar   =  Variable("")    // 不指定老師，但指定性別
-
-
-
-
-Observable.combineLatest( masterNo.asObservable(),
-                          masterGendar.asObservable(),
-                          specifyGendar.asObservable())
-    { (no, gender, spec) -> String in
-        if !no.isEmpty { return no + gender }
-        else if !spec.isEmpty { return gender}
-        return "不指定"
-    }
-    .skip(1)
-    .subscribe { (event) in
-        print(event.element!)
-    }
-
-
-masterNo.value = "123"
-masterGendar.value = "男"
-specifyGendar.value = ""
+//var masterNo        =  Variable("")     // 指定老師編號
+//var masterGendar    =  Variable("")    // 老師性別
+//var specifyGendar   =  Variable("")    // 不指定老師，但指定性別
+//
+//
+//
+//
+//Observable.combineLatest( masterNo.asObservable(),
+//                          masterGendar.asObservable(),
+//                          specifyGendar.asObservable())
+//    { (no, gender, spec) -> String in
+//        if !no.isEmpty { return no + gender }
+//        else if !spec.isEmpty { return gender}
+//        return "不指定"
+//    }
+//    .skip(1)
+//    .subscribe { (event) in
+//        print(event.element!)
+//    }
+//
+//
+//masterNo.value = "123"
+//masterGendar.value = "男"
+//specifyGendar.value = ""
 
 
 
